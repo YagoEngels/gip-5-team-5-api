@@ -37,7 +37,5 @@ public class UserRestController {
         userService.removeUser(userService.findById(id).get());
     }
 
-
-
 }
 
