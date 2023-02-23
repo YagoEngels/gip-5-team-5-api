@@ -1,4 +1,4 @@
-package item;
+package com.example.gip5team5api.item;
 
 import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;

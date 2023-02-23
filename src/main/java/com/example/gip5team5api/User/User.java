@@ -1,10 +1,9 @@
-package User;
+package com.example.gip5team5api.User;
 import org.jetbrains.annotations.NotNull;
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @Entity
-@Table(name="User")
+@Table(name= "com/example/gip5team5api/User")
 public class User {
 
     @Id

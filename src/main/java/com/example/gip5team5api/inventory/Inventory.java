@@ -1,7 +1,7 @@
-package inventory;
+package com.example.gip5team5api.inventory;
 
 
-import item.Item;
+import com.example.gip5team5api.item.Item;
 import jakarta.persistence.*;
 
 import java.util.List;

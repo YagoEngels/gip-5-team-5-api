@@ -1,4 +1,4 @@
-package inventory;
+package com.example.gip5team5api.inventory;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
