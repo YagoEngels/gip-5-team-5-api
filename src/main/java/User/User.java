@@ -24,6 +24,10 @@ public class User {
     @NotNull
     String birthdate;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getFirstname() {
         return firstname;
     }
