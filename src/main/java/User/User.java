@@ -1,7 +1,6 @@
 package User;
-
-import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
+import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @Entity

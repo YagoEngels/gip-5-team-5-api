@@ -1,6 +1,7 @@
 package item;
 
 import jakarta.persistence.*;
+import org.jetbrains.annotations.NotNull;
 
 @Entity
 @Table(name = "Item")
@@ -10,9 +11,13 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     String Name;
+    @NotNull
     String ModelNr;
+    @NotNull
     String ExtraInfo;
+    @NotNull
     String Price;
 
     public Long getId() {
