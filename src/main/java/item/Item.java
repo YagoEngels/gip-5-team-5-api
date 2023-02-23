@@ -15,6 +15,10 @@ public class Item {
     String ExtraInfo;
     String Price;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getName() {
         return Name;
     }
