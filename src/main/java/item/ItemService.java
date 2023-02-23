@@ -28,7 +28,7 @@ public class ItemService {
         return item.get();
     }
 
-    public void Add(Item item){
+    public void add(Item item){
         List<Item> items = itemRepository.findALl();
         for (Item currentItem : items){
             if (currentItem.getId().equals(item.getId())){

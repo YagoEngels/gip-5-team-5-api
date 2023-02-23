@@ -12,7 +12,7 @@ public class Inventory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @OneToMany
     @JoinColumn(name = "Items")
@@ -25,7 +25,7 @@ public class Inventory {
         this.itemList = itemList;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
