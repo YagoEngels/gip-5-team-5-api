@@ -3,7 +3,7 @@ import org.jetbrains.annotations.NotNull;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name= "com/example/gip5team5api/User")
+@Table(name= "User")
 public class User {
 
     @Id
