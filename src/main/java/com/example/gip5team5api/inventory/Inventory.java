@@ -15,7 +15,7 @@ public class Inventory {
     private Long id;
 
     @OneToMany
-    @JoinColumn(name = "Items")
+    @JoinColumn(name = "Item")
     private List<Item> itemList;
 
     public Inventory() {
