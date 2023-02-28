@@ -18,10 +18,10 @@ public class UserService {
     public User updateUser(long id, User _user) {
         Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
-            user.get().setFirstname(_user.firstname);
-            user.get().setLastname(_user.firstname);
-            user.get().setEmail(_user.firstname);
-            user.get().setBirthdate(_user.firstname);
+            user.get().setFirstname(_user.getFirstname());
+            user.get().setLastname(_user.getLastname());
+            user.get().setEmail(_user.getEmail());
+            user.get().setBirthdate(_user.getBirthdate());
             userRepository.save(user.get());
             return user.get();
         }
@@ -30,8 +30,8 @@ public class UserService {
 
     public void add(User user){
         List<User> userList = userRepository.findAll();
-        for (User currentuser : userList){
-            if (currentuser.getId().equals(user.getId())){
+        for (User currentUser : userList){
+            if (currentUser.getId().equals(user.getId())){
                 throw new IllegalArgumentException("User already exists");
             }
         }

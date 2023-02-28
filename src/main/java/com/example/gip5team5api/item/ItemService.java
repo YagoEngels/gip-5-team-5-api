@@ -21,10 +21,10 @@ public class ItemService {
             item.get().setExtraInfo(_item.getExtraInfo());
             item.get().setModelNr(_item.getModelNr());
             item.get().setPrice(_item.getPrice());
-
             itemRepository.save(item.get());
+            return item.get();
         }
-        return item.get();
+        throw new IllegalArgumentException("Item doesnt exists");
     }
 
     public void add(Item item){
