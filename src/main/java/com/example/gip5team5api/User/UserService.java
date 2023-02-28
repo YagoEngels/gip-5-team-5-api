@@ -30,8 +30,8 @@ public class UserService {
 
     public void add(User user){
         List<User> userList = userRepository.findAll();
-        for (User currentuser : userList){
-            if (currentuser.getId().equals(user.getId())){
+        for (User currentUser : userList){
+            if (currentUser.getId().equals(user.getId())){
                 throw new IllegalArgumentException("User already exists");
             }
         }

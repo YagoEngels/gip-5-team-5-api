@@ -20,8 +20,9 @@ public class InventoryService {
             inventory.get().setItemList(_inventory.getItemList());
 
             inventoryRepository.save(inventory.get());
+            return inventory.get();
         }
-        return inventory.get();
+        throw new IllegalArgumentException("User already exists");
     }
 
     public void add(Inventory inventory){
