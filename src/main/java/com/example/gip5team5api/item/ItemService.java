@@ -28,7 +28,7 @@ public class ItemService {
     }
 
     public void add(Item item){
-        List<Item> items = itemRepository.findALl();
+        List<Item> items = itemRepository.findAll();
         for (Item currentItem : items){
             if (currentItem.getId().equals(item.getId())){
                 throw new IllegalArgumentException("item bestaat al in de db");
