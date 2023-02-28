@@ -14,8 +14,8 @@ public class InventoryRestController {
     @Autowired
     public InventoryService inventoryService;
 
-    @PutMapping("/user/{id}")
-    public void updateinventory(@PathVariable long id, @RequestBody Inventory inventory) {inventoryService.updateInventory(id,inventory);}
+    @PutMapping("/inventory/{id}")
+    public void updateInventory(@PathVariable long id, @RequestBody Inventory inventory) {inventoryService.updateInventory(id,inventory);}
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/inventory")
