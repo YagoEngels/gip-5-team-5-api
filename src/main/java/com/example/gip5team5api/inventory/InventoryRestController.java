@@ -24,13 +24,13 @@ public class InventoryRestController {
         return inventory;
     }
 
-    @GetMapping("inventory/{id}")
+    @GetMapping("/inventory/{id}")
     public Optional<Inventory> getInventory(@PathVariable long id) {return inventoryService.findById(id); }
 
-    @RequestMapping("inventory")
+    @RequestMapping("/inventory")
     public Iterable<Inventory> getInventories() {return  inventoryService.findAll(); }
 
-    @DeleteMapping("inventory/{id}")
+    @DeleteMapping("/inventory/{id}")
     public void removeInventory(@PathVariable long id) {
         inventoryService.removeInventory(inventoryService.findById(id).get());
     }

@@ -23,7 +23,7 @@ public class User {
     String birthdate;
 
     @NotNull
-    String role;
+    String roles;
 
     @NotNull
     String password;
@@ -64,12 +64,12 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    public String getRole() {
-        return role;
+    public String getRoles() {
+        return roles;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRole(String roles) {
+        this.roles = roles;
     }
 
     public String getPassword() {
@@ -83,12 +83,12 @@ public class User {
     public User() {
     }
 
-    public User( String firstname, String lastname,  String email,  String birthdate, String role, String password) {
+    public User( String firstname, String lastname,  String email,  String birthdate, String roles, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.birthdate = birthdate;
-        this.role = role;
+        this.roles = roles;
         this.password = password;
     }
 }
