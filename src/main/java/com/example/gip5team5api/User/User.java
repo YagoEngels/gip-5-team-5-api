@@ -25,6 +25,9 @@ public class User {
     @NotNull
     String role;
 
+    @NotNull
+    String password;
+
     public Long getId() {
         return id;
     }
@@ -69,14 +72,23 @@ public class User {
         this.role = role;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public User() {
     }
 
-    public User( String firstname,String lastname,  String email,  String birthdate, String role) {
+    public User( String firstname, String lastname,  String email,  String birthdate, String role, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.birthdate = birthdate;
         this.role = role;
+        this.password = password;
     }
 }
