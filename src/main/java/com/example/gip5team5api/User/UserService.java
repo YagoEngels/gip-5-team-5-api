@@ -23,6 +23,7 @@ public class UserService {
             user.get().setEmail(_user.getEmail());
             user.get().setBirthdate(_user.getBirthdate());
             user.get().setRole(_user.getRole());
+            user.get().setPassword(_user.getPassword());
             userRepository.save(user.get());
             return user.get();
         }
