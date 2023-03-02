@@ -22,6 +22,9 @@ public class User {
     @NotNull
     String birthdate;
 
+    @NotNull
+    String role;
+
     public Long getId() {
         return id;
     }
@@ -58,13 +61,22 @@ public class User {
         this.birthdate = birthdate;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public User() {
     }
 
-    public User( String firstname,String lastname,  String email,  String birthdate) {
+    public User( String firstname,String lastname,  String email,  String birthdate, String role) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.birthdate = birthdate;
+        this.role = role;
     }
 }

@@ -22,6 +22,7 @@ public class UserService {
             user.get().setLastname(_user.getLastname());
             user.get().setEmail(_user.getEmail());
             user.get().setBirthdate(_user.getBirthdate());
+            user.get().setRole(_user.getRole());
             userRepository.save(user.get());
             return user.get();
         }
