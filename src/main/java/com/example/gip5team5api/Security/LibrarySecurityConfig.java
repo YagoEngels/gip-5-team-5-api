@@ -32,6 +32,6 @@ public class LibrarySecurityConfig {
                 .requestMatchers(UN_SECURED_Urls).permitAll().and()
                 .authorizeHttpRequests().requestMatchers(SECURED_Urls)
                 .hasAuthority("ADMIN").anyRequest()
-                .authenticated().and().formLogin().and().build();
+                .authenticated().and().httpBasic().and().build();
     }
 }
