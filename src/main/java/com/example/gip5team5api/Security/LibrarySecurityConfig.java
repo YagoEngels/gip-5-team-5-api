@@ -12,10 +12,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class LibrarySecurityConfig {
 
-    private static final String[] SECURED_Urls = {"/api/v1/inventory/**"};
+    private static final String[] SECURED_Urls = {
+            "/api/v1/inventory/**"
+    };
     private static final String[] UN_SECURED_Urls = {
             "/api/v1/inventory",
-            "/api/v1/user/**"
+            "api/v1/user/**"
     };
 
     //om password te encode

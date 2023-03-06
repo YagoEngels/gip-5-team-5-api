@@ -17,7 +17,7 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public User findByEmail(String email){
+    /*public User findByEmail(String email){
 
         List<User> userList = userRepository.findAll();
         User uit = new User();
@@ -29,6 +29,8 @@ public class UserService {
         }
         return uit;
     }
+
+     */
     public List<User> findAll() { return userRepository.findAll(); }
 
     public User updateUser(long id, User _user) {
@@ -58,6 +60,7 @@ public class UserService {
     }
 
     public Optional<User> findById(long id) { return userRepository.findById(id); }
+    public Optional<User> findByEmail(String e) { return userRepository.findByEmail(e); }
 
     public void removeUser(User user){ userRepository.delete(user); }
 }
