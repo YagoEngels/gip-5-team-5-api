@@ -27,7 +27,7 @@ public class ItemService {
         throw new IllegalArgumentException("Item doesnt exists");
     }
 
-    public void add(Item item){
+    public void addItem(Item item){
         List<Item> items = itemRepository.findAll();
         for (Item currentItem : items){
             if (currentItem.getId().equals(item.getId())){
