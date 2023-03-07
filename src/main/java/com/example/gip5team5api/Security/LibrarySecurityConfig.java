@@ -12,12 +12,16 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class LibrarySecurityConfig {
 
+    private static final String[] extra_SECURED_Urls = {
+            "/api/v1/user/email/{email}"
+    };
     private static final String[] SECURED_Urls = {
-            "/api/v1/inventory/**"
+            "/api/v1/user/getusers",
+            "/api/v1/user/update/{id}",
+            "/api/v1/user/addadmin"
     };
     private static final String[] UN_SECURED_Urls = {
-            "/api/v1/inventory",
-            "api/v1/user/**"
+            "/api/v1/user/adduser"
     };
 
     //om password te encode
@@ -31,9 +35,15 @@ public class LibrarySecurityConfig {
 
         return http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers(UN_SECURED_Urls).permitAll().and()
-                .authorizeHttpRequests().requestMatchers(SECURED_Urls)
-                .hasAuthority("ADMIN").anyRequest()
-                .authenticated().and().httpBasic().and().build();
+                .requestMatchers(UN_SECURED_Urls)
+                .permitAll()
+                .and()
+                .authorizeHttpRequests()
+                .requestMatchers(SECURED_Urls)
+                .hasAuthority("ADMIN")
+                .anyRequest()
+                .authenticated()
+                .and().httpBasic()
+                .and().build();
     }
 }

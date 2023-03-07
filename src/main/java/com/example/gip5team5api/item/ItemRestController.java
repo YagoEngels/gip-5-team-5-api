@@ -13,7 +13,7 @@ public class ItemRestController {
     @Autowired
     public ItemService itemService;
 
-    @PutMapping
+    @PutMapping("item/{id}")
     public void updateItem(@PathVariable long id, @RequestBody Item item) { itemService.updateItem(id,item); }
 
     @ResponseStatus(HttpStatus.CREATED)

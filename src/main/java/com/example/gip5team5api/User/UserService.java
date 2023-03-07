@@ -48,7 +48,17 @@ public class UserService {
         throw new IllegalArgumentException("User already exists");
     }
 
-    public void add(User user){
+    public void addUser(User user){
+        List<User> userList = userRepository.findAll();
+        for (User currentUser : userList){
+            if (currentUser.getId().equals(user.getId())){
+                throw new IllegalArgumentException("User already exists");
+            }
+        }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
+    }
+    public void addAdmin(User user){
         List<User> userList = userRepository.findAll();
         for (User currentUser : userList){
             if (currentUser.getId().equals(user.getId())){
