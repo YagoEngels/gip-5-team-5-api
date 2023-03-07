@@ -13,23 +13,23 @@ public class ItemRestController {
     @Autowired
     public ItemService itemService;
 
-    @PutMapping("item/{id}")
+    @PutMapping("item/update/{id}")
     public void updateItem(@PathVariable long id, @RequestBody Item item) { itemService.updateItem(id,item); }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/item")
+    @PostMapping("item/add")
     public Item addItem(@RequestBody Item item){
         itemService.addItem(item);
         return item;
     }
 
-    @GetMapping("item/{id}")
+    @GetMapping("item/get/{id}")
     public Optional<Item> getItemById(@PathVariable long id) { return itemService.findById(id); }
 
-    @RequestMapping("/item")
+    @RequestMapping("item/getall")
     public Iterable<Item> getItems() { return itemService.findAll(); }
 
-    @DeleteMapping("/item/{id}")
+    @DeleteMapping("item/delete/{id}")
     public void removeItem(@PathVariable long id) {
         itemService.removeItem(itemService.findById(id).get());
     }

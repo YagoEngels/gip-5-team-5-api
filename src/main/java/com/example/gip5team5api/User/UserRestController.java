@@ -38,10 +38,10 @@ public class UserRestController {
     @GetMapping("user/email/{email}")
     public Optional<User> getUserByEmail(@PathVariable String email) { return userService.findByEmail(email); }
 
-    @RequestMapping("user/getusers")
+    @RequestMapping("user/getall")
     public Iterable<User> getUsers() { return userService.findAll(); }
 
-    @DeleteMapping("/user/delete/{id}")
+    @DeleteMapping("user/delete/{id}")
     public void removeUser(@PathVariable long id) {
         userService.removeUser(userService.findById(id).get());
     }

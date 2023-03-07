@@ -12,14 +12,27 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class LibrarySecurityConfig {
 
+    //urls for only users
     private static final String[] extra_SECURED_Urls = {
-            "/api/v1/user/email/{email}"
+            "/api/v1/user/email/{email}",
+            "/api/v1/inventory/update/{id}",
+            "/api/v1/inventory/get/{id}",
+            "/api/v1/item/update/{id}",
+            "/api/v1/item/add",
+            "/api/v1/item/get/{id}",
+            "/api/v1/item/getall",
+            "/api/v1/item/delete/{id}"
     };
+    //urls for admins
     private static final String[] SECURED_Urls = {
-            "/api/v1/user/getusers",
+            "/api/v1/user/getall",
             "/api/v1/user/update/{id}",
-            "/api/v1/user/addadmin"
+            "/api/v1/user/addadmin",
+            "/api/v1/inventory/add",
+            "/api/v1/inventory/getall",
+            "/api/v1/inventory/delete/{id}"
     };
+    //urls for everybody
     private static final String[] UN_SECURED_Urls = {
             "/api/v1/user/adduser"
     };
