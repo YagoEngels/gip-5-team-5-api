@@ -25,9 +25,11 @@ public class UserRestController {
         return user;
     }
 
+    @GetMapping("user/email/{email}")
+    public Optional<User> getUserByEmail(@PathVariable String email) { return userService.findByEmail(email); }
+
     @GetMapping("user/{id}")
     public Optional<User> getUserById(@PathVariable long id) { return userService.findById(id); }
-
 
     @RequestMapping("/user")
     public Iterable<User> getUsers() { return userService.findAll(); }
