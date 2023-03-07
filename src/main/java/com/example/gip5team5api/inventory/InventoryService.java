@@ -25,7 +25,7 @@ public class InventoryService {
         throw new IllegalArgumentException("User already exists");
     }
 
-    public void add(Inventory inventory){
+    public void addInventory(Inventory inventory){
         List<Inventory> inventories = inventoryRepository.findAll();
         for(Inventory currentInventory : inventories){
             if(currentInventory.getId().equals(inventory.getId())){

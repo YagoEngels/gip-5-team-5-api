@@ -19,7 +19,7 @@ public class ItemRestController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/item")
     public Item addItem(@RequestBody Item item){
-        itemService.add(item);
+        itemService.addItem(item);
         return item;
     }
 

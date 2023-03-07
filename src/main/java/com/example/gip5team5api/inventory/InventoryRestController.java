@@ -20,7 +20,7 @@ public class InventoryRestController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/inventory")
     public Inventory addInventory(@RequestBody Inventory inventory){
-        inventoryService.add(inventory);
+        inventoryService.addInventory(inventory);
         return inventory;
     }
 

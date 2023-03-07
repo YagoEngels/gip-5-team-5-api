@@ -21,7 +21,7 @@ public class UserRestController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/user")
     public User addUser(@RequestBody User user){
-        userService.add(user);
+        userService.addUser(user);
         return user;
     }
 
