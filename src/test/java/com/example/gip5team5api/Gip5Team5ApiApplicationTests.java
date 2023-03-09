@@ -2,8 +2,6 @@ package com.example.gip5team5api;
 
 import com.example.gip5team5api.User.User;
 import com.example.gip5team5api.User.UserService;
-import com.example.gip5team5api.inventory.Inventory;
-import com.example.gip5team5api.inventory.InventoryService;
 import com.example.gip5team5api.item.Item;
 import com.example.gip5team5api.item.ItemService;
 import jakarta.persistence.EntityManager;
@@ -21,22 +19,17 @@ class Gip5Team5ApiApplicationTests {
     
     private UserService userservice;
     private ItemService itemService;
-    private InventoryService inventoryService;
     private Item testItem;
-    private Inventory testInventory;
     private User testUser;
 
     @BeforeEach
     public void beforeEach(){
         UserService userService = new UserService();
         ItemService itemService = new ItemService();
-        InventoryService inventoryService = new InventoryService();
         ArrayList<Item> items = new ArrayList<>();
 
         testUser = new User("Sander","Raymakers","s.r@gmail.com","02/02/2001","Admin","somebody");
         testItem = new Item("Moederbord","5","een moederbord voor je pc", "150");
-        testInventory = new Inventory(items);
-        testInventory.addItem(testItem);
 
 
     }
@@ -53,11 +46,6 @@ class Gip5Team5ApiApplicationTests {
         itemService.addItem(testItem);
     }
 
-    @Test
-    public void testAddInventory(){
-        // test voor inventory toe te voegen.
-        inventoryService.addInventory(testInventory);
-    }
 
     @Test
     public void testUpdateUser(){
@@ -69,12 +57,6 @@ class Gip5Team5ApiApplicationTests {
     public void testUpdateItem(){
         // test voor item aan te passen.
         itemService.updateItem(testItem.getId(),testItem);
-    }
-
-    @Test
-    public void testUpdateInventory(){
-        // test voor inventory aan te passen.
-        inventoryService.updateInventory(testInventory.getId(),testInventory);
     }
     @Test
     public void testDeleteUser(){
@@ -92,14 +74,6 @@ class Gip5Team5ApiApplicationTests {
     }
 
     @Test
-    public void testDeleteInventory(){
-        // test voor inventory te verwijderen.
-        ArrayList<Item> delItems = new ArrayList<>();
-        Inventory delTestInventory = new Inventory(delItems);
-        inventoryService.removeInventory(delTestInventory);
-    }
-
-    @Test
     public void testFindAllUsers(){
         // test om alle users te zoeken/vinden.
         userservice.findAll();
@@ -109,12 +83,6 @@ class Gip5Team5ApiApplicationTests {
     public void testFindAllItems(){
         // test om alle items te zoeken/vinden.
         itemService.findAll();
-    }
-
-    @Test
-    public void testFindAllInventories(){
-        // test om alle inventories te zoeken/vinden.
-        inventoryService.findAll();
     }
 
     @Test
@@ -129,10 +97,5 @@ class Gip5Team5ApiApplicationTests {
         itemService.findById(1);
     }
 
-    @Test
-    public void testFindInventoryById(){
-        // test om een inventory met een id te zoeken/vinden.
-        inventoryService.findById(1);
-    }
 
 }
