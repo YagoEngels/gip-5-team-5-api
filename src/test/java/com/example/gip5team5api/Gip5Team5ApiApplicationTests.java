@@ -26,7 +26,6 @@ class Gip5Team5ApiApplicationTests {
     public void beforeEach(){
         UserService userService = new UserService();
         ItemService itemService = new ItemService();
-        ArrayList<Item> items = new ArrayList<>();
 
         testUser = new User("Sander","Raymakers","s.r@gmail.com","02/02/2001","Admin","somebody");
         testItem = new Item("Moederbord","5","een moederbord voor je pc", "150");
