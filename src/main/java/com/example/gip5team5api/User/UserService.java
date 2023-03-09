@@ -51,7 +51,7 @@ public class UserService {
     public void addUser(User user){
         List<User> userList = userRepository.findAll();
         for (User currentUser : userList){
-            if (currentUser.getId().equals(user.getId())){
+            if (currentUser.getEmail().equals(user.getEmail())){
                 throw new IllegalArgumentException("User already exists");
             }
         }
@@ -61,7 +61,7 @@ public class UserService {
     public void addAdmin(User user){
         List<User> userList = userRepository.findAll();
         for (User currentUser : userList){
-            if (currentUser.getId().equals(user.getId())){
+            if (currentUser.getEmail().equals(user.getEmail())){
                 throw new IllegalArgumentException("User already exists");
             }
         }
