@@ -16,6 +16,11 @@ public class ItemRestController {
     @PutMapping("item/update/{id}")
     public void updateItem(@PathVariable long id, @RequestBody Item item) { itemService.updateItem(id,item); }
 
+    @PutMapping("item/update/{id}/{actie}/{amount}")
+    public void addOrRemoveAmount(@PathVariable long id, @PathVariable String actie, @PathVariable int amount){
+        itemService.addOrRemoveAmount(id,actie,amount);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("item/add")
     public Item addItem(@RequestBody Item item){

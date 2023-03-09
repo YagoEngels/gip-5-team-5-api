@@ -37,6 +37,22 @@ public class ItemService {
         itemRepository.save(item);
     }
 
+    public void addOrRemoveAmount(long id, String actie, int aantal){
+        Optional<Item> item = findById(id);
+        if (item.isPresent()){
+            if (actie.equals("add") || actie.equals("ADD")){
+                item.get().setAantal(item.get().getAantal() + aantal);
+            } else
+                if (actie.equals("remove") || actie.equals("REMOVE")){
+                    if (item.get().getAantal() > aantal){
+                        item.get().setAantal(item.get().getAantal() - aantal);
+                    }
+                    throw new IllegalArgumentException("dit is een te groot aantal om te verwijderen");
+                }
+        }
+        throw new IllegalArgumentException("item bestaat niet");
+    }
+
     public Optional<Item> findById(long id) {return itemRepository.findById(id);}
 
     public void removeItem(Item item) {itemRepository.delete(item);}

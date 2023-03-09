@@ -20,6 +20,9 @@ public class Item {
     @NotNull
     String Price;
 
+    @NotNull
+    int Aantal;
+
     public Long getId() {
         return id;
     }
@@ -49,14 +52,23 @@ public class Item {
         Price = price;
     }
 
+    public void setAantal(int aantal) {
+        Aantal = aantal;
+    }
+
+    public int getAantal() {
+        return Aantal;
+    }
+
     public Item(){}
     public Item(String name,
                 String modelNr,
                 String extraInfo,
-                String price) {
+                String price, int aantal) {
         this.Name = name;
         this.ModelNr = modelNr;
         this.ExtraInfo = extraInfo;
         this.Price = price;
+        this.Aantal = aantal;
     }
 }

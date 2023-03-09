@@ -18,7 +18,8 @@ public class LibrarySecurityConfig {
             "/api/v1/item/add",
             "/api/v1/item/get/{id}",
             "/api/v1/item/getall",
-            "/api/v1/item/delete/{id}"
+            "/api/v1/item/delete/{id}",
+            "/api/v1/item/update/{id}/{actie}/{amount}"
     };
     //urls for admins
     private static final String[] SECURED_Urls = {
