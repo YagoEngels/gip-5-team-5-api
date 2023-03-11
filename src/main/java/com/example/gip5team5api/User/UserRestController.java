@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/")
+@CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.OPTIONS, RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, allowedHeaders = "*", allowCredentials = "true")
 public class UserRestController {
 
     @Autowired
@@ -36,7 +37,9 @@ public class UserRestController {
     }
 
     @GetMapping("user/email/{email}")
-    public Optional<User> getUserByEmail(@PathVariable String email) { return userService.findByEmail(email); }
+    public Optional<User> getUserByEmail(@PathVariable String email) {
+        return userService.findByEmail(email);
+    }
 
     @RequestMapping("user/getall")
     public Iterable<User> getUsers() { return userService.findAll(); }
