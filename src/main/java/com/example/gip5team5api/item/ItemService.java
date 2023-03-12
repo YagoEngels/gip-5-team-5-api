@@ -21,6 +21,7 @@ public class ItemService {
             item.get().setExtraInfo(_item.getExtraInfo());
             item.get().setModelNr(_item.getModelNr());
             item.get().setPrice(_item.getPrice());
+            item.get().setType(_item.getType());
             itemRepository.save(item.get());
             return item.get();
         }
@@ -37,15 +38,15 @@ public class ItemService {
         itemRepository.save(item);
     }
 
-    public void addOrRemoveAmount(long id, String actie, int aantal){
+    public void addOrRemoveAmount(long id, String actie, int amount){
         Optional<Item> item = findById(id);
         if (item.isPresent()){
             if (actie.equals("add") || actie.equals("ADD")){
-                item.get().setAantal(item.get().getAantal() + aantal);
+                item.get().setAmount(item.get().getAmount() + amount);
             } else
                 if (actie.equals("remove") || actie.equals("REMOVE")){
-                    if (item.get().getAantal() > aantal){
-                        item.get().setAantal(item.get().getAantal() - aantal);
+                    if (item.get().getAmount() > amount){
+                        item.get().setAmount(item.get().getAmount() - amount);
                     }
                     throw new IllegalArgumentException("dit is een te groot aantal om te verwijderen");
                 }

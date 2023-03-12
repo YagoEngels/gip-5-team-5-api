@@ -21,7 +21,9 @@ public class Item {
     String Price;
 
     @NotNull
-    int Aantal;
+    String Type;
+    @NotNull
+    int Amount;
 
     public Long getId() {
         return id;
@@ -52,23 +54,32 @@ public class Item {
         Price = price;
     }
 
-    public void setAantal(int aantal) {
-        Aantal = aantal;
+    public void setAmount(int amount) {
+        Amount = amount;
     }
 
-    public int getAantal() {
-        return Aantal;
+    public int getAmount() {
+        return Amount;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        Type = type;
     }
 
     public Item(){}
     public Item(String name,
                 String modelNr,
                 String extraInfo,
-                String price, int aantal) {
+                String price, int amount, String type) {
         this.Name = name;
         this.ModelNr = modelNr;
         this.ExtraInfo = extraInfo;
         this.Price = price;
-        this.Aantal = aantal;
+        this.Amount = amount;
+        this.Type = type;
     }
 }
