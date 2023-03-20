@@ -36,6 +36,16 @@ public class UserRestController {
         return user;
     }
 
+    @PutMapping("user/promoteAdmin/{id}")
+    public void PromoteAddmin(@PathVariable long id){
+        userService.promoteAdmin(id);
+    }
+
+    @PutMapping("user/demoteAdmin/{id}")
+    public void DemoteAddmin(@PathVariable long id){
+        userService.demoteAdmin(id);
+    }
+
     @GetMapping("user/email/{email}")
     public Optional<User> getUserByEmail(@PathVariable String email) {
         return userService.findByEmail(email);

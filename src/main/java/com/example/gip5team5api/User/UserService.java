@@ -69,6 +69,20 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void promoteAdmin(long id){
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            user.get().setRole("ADMIN");
+        }
+        userRepository.save(user.get());
+    }
+    public void demoteAdmin(long id){
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            user.get().setRole("USER");
+        }
+        userRepository.save(user.get());
+    }
     public Optional<User> findById(long id) { return userRepository.findById(id); }
     public Optional<User> findByEmail(String e) { return userRepository.findByEmail(e); }
 
